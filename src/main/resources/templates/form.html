@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<form action="#" th:action="@{/form}" th:object="${primer}" method="post">
+    <table>
+        <tr>
+            <td>Width:</td>
+            <td><input type="text" th:field="*{width}" /></td>
+            <td th:if="${#fields.hasErrors('width')}" th:errors="*{width}">Width Error</td>
+        </tr>
+        <tr>
+            <td>Height:</td>
+            <td><input type="text" th:field="*{height}" /></td>
+            <td th:if="${#fields.hasErrors('height')}" th:errors="*{height}">Height Error</td>
+        </tr>
+        <tr>
+            <td>Seed:</td>
+            <td><input type="text" th:field="*{seed}" /></td>
+            <td th:if="${#fields.hasErrors('seed')}" th:errors="*{seed}">Seed Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
